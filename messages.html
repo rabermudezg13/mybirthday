@@ -7,46 +7,36 @@
   <title>Roni — What the People Who Love You Say</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="page page-messages">
-  <div class="ambient-lily lily-a" aria-hidden="true">✿</div>
-  <div class="ambient-lily lily-b" aria-hidden="true">✿</div>
-  <div class="ambient-lily lily-c" aria-hidden="true">✿</div>
-  <div class="ambient-lily lily-d" aria-hidden="true">✿</div>
+  <div class="lilies lilies-left" aria-hidden="true">
+    <span>⚜</span><span>⚜</span><span>⚜</span>
+  </div>
+  <div class="lilies lilies-right" aria-hidden="true">
+    <span>⚜</span><span>⚜</span><span>⚜</span>
+  </div>
 
   <main class="messages-shell">
-    <header class="tribute-header tribute-enter">
+    <header class="tribute-header">
       <div class="portrait-wrap portrait-small">
         <img src="assets/roni.jpg" alt="Roni" class="portrait" onerror="this.closest('.portrait-wrap').classList.add('missing-photo'); this.style.display='none';" />
         <div class="photo-placeholder" aria-hidden="true">R</div>
       </div>
       <p class="eyebrow">For your birthday, with love</p>
-      <h1>Roni, this is what the people who love you have to say about you.</h1>
-      <p class="tribute-intro">Every message below carries a little piece of the love, gratitude, laughter, and memories you have given to the people around you.</p>
-
-      <div id="loveCounter" class="love-counter" aria-live="polite">
-        <span class="love-counter-number">♥</span>
-        <span>Gathering the love…</span>
-      </div>
-
-      <div class="lily-divider" aria-hidden="true"><span>✦</span><span>✿</span><span>✦</span></div>
+      <h1>Roni, the people who love you say this about you.</h1>
+      <p class="tribute-intro">Every message below is a little piece of the love, gratitude, laughter, and memories you have given to the people around you.</p>
+      <div class="lily-divider" aria-hidden="true"><span>✦</span><span>⚜</span><span>✦</span></div>
     </header>
 
     <section id="messageGrid" class="message-grid" aria-live="polite">
       <div class="loading-card">Gathering the love…</div>
     </section>
 
-    <section class="tribute-cta glass">
-      <p class="eyebrow">One more memory</p>
-      <h2>Have something beautiful to tell Roni?</h2>
-      <p>Your words can become part of this birthday gift too.</p>
-      <a class="primary-btn cta-link" href="index.html">Leave a message for Roni</a>
-    </section>
-
     <footer class="tribute-footer">
       <p>Made with love for Roni.</p>
+      <a class="secondary-link" href="index.html">Leave another message</a>
     </footer>
   </main>
 
