@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f7efe8" />
+  <title>For Roni, With Love</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page page-form">
+  <div class="petals" aria-hidden="true"></div>
+  <main class="shell">
+    <section class="hero-card glass">
+      <div class="portrait-wrap">
+        <img src="assets/roni.jpg" alt="Roni" class="portrait" onerror="this.closest('.portrait-wrap').classList.add('missing-photo'); this.style.display='none';" />
+        <div class="photo-placeholder" aria-hidden="true">R</div>
+      </div>
+
+      <div class="hero-copy">
+        <p class="eyebrow">A birthday gift made of memories</p>
+        <h1>Do you have something to say to Roni?</h1>
+        <p class="intro">Write a few words, a favorite memory, or something you have always wanted her to know. Your message will become part of a very special birthday surprise.</p>
+      </div>
+
+      <form id="messageForm" class="message-form">
+        <label>
+          <span>Your name</span>
+          <input id="name" name="name" type="text" maxlength="60" autocomplete="name" placeholder="Your name" required />
+        </label>
+
+        <label>
+          <span>Your relationship to Roni <small>(optional)</small></span>
+          <input id="relationship" name="relationship" type="text" maxlength="60" placeholder="Friend, family, coworker…" />
+        </label>
+
+        <label>
+          <span>Your message for Roni</span>
+          <textarea id="message" name="message" rows="7" maxlength="1200" placeholder="Roni, I want you to know…" required></textarea>
+          <small id="counter">0 / 1200</small>
+        </label>
+
+        <button id="submitBtn" type="submit" class="primary-btn">Send my message <span>♥</span></button>
+        <p id="status" class="status" role="status" aria-live="polite"></p>
+      </form>
+
+      <a class="secondary-link" href="messages.html">View the birthday messages</a>
+    </section>
+  </main>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
