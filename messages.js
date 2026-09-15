@@ -14,7 +14,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const grid = document.querySelector("#messageGrid");
-const loveCounter = document.querySelector("#loveCounter");
 
 function escapeHtml(value = "") {
   return value
@@ -25,23 +24,9 @@ function escapeHtml(value = "") {
     .replaceAll("'", "&#039;");
 }
 
-function updateCounter(count) {
-  if (!loveCounter) return;
-  const label = count === 1
-    ? "1 person has shared their love with Roni"
-    : `${count} people have shared their love with Roni`;
-
-  loveCounter.innerHTML = `
-    <span class="love-counter-number">${count}</span>
-    <span>${label}</span>
-  `;
-}
-
 const q = query(collection(db, "birthdayMessages"), orderBy("createdAt", "asc"));
 
 onSnapshot(q, (snapshot) => {
-  updateCounter(snapshot.size);
-
   if (snapshot.empty) {
     grid.innerHTML = '<div class="empty-card">The first loving words for Roni will appear here. ♥</div>';
     return;
@@ -54,8 +39,7 @@ onSnapshot(q, (snapshot) => {
     const message = escapeHtml(data.message || "");
 
     return `
-      <article class="message-card" style="animation-delay:${Math.min(index * 80, 800)}ms">
-        <div class="message-heart" aria-hidden="true">♥</div>
+      <article class="message-card" style="animation-delay:${Math.min(index * 70, 700)}ms">
         <blockquote>“${message}”</blockquote>
         <div class="from">— ${name}</div>
         ${relationship ? `<div class="relationship">${relationship}</div>` : ""}
@@ -65,7 +49,4 @@ onSnapshot(q, (snapshot) => {
 }, (error) => {
   console.error(error);
   grid.innerHTML = '<div class="empty-card">We could not load the messages yet. Please refresh in a moment.</div>';
-  if (loveCounter) {
-    loveCounter.innerHTML = '<span class="love-counter-number">♥</span><span>Love is still here — please refresh in a moment.</span>';
-  }
 });
